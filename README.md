@@ -57,7 +57,8 @@ Get the latest build from [Releases](https://github.com/buttovvskiii/ploom-rs/re
 |---|---|
 | `Ploom-macos-universal.dmg` | macOS 11+, Apple silicon and Intel |
 | `Ploom-windows-x64-setup.exe` | Windows 10/11, per-user install |
-| `ploom-cli-macos-universal.tar.gz`, `ploom-cli-windows-x64.zip` | the `ploom` command-line tool |
+| `Ploom-linux-x64.AppImage`, `Ploom-linux-x64.deb` | Linux x64 (needs BlueZ) |
+| `ploom-cli-*` | the `ploom` command-line tool for each platform |
 
 The builds are not code-signed, so the system asks once:
 
@@ -79,7 +80,7 @@ app and the app.ploom.com tab first.
 |---|---|
 | macOS | Primary platform; developed here |
 | Windows | Built by CI; not yet tested on hardware — reports welcome |
-| Linux | Build from source; untested |
+| Linux | Built by CI; not yet tested on hardware — reports welcome |
 
 ## Stick limit
 

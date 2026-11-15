@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: cargo
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
     groups:
       cargo:
         patterns: ["*"]
@@ -12,7 +12,7 @@ updates:
   - package-ecosystem: npm
     directory: /app/ui
     schedule:
-      interval: weekly
+      interval: monthly
     groups:
       # The Tauri JS API and CLI must stay on the same minor version as the
       # `tauri` crate; review these bumps together with Cargo.
