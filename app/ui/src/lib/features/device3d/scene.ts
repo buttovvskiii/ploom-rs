@@ -197,9 +197,21 @@ export async function createDeviceScene(
   const glow = new LampState(0.9, 2.2);
   const scratch = new THREE.Color();
 
+  // Skip rendering while a page scrolls so the GPU belongs to the scroll.
+  let holdUntil = 0;
+  const onPageScroll = (): void => {
+    holdUntil = performance.now() + 160;
+  };
+  window.addEventListener("ploom:scroll", onPageScroll);
+
   const frame = (now: number): void => {
     raf = 0;
     if (disposed) return;
+    if (now < holdUntil) {
+      last = 0;
+      raf = requestAnimationFrame(frame);
+      return;
+    }
     const dt = last ? Math.min(0.05, Math.max(0, (now - last) / 1000)) : 1 / 60;
     last = now;
     time += dt;
@@ -374,6 +386,7 @@ export async function createDeviceScene(
       disposed = true;
       abort.abort();
       if (raf) cancelAnimationFrame(raf);
+      window.removeEventListener("ploom:scroll", onPageScroll);
       canvas.removeEventListener("pointerdown", onPointerDown);
       canvas.removeEventListener("pointermove", onPointerMove);
       canvas.removeEventListener("pointerup", onPointerUp);

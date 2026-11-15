@@ -11,6 +11,11 @@ if (isTauri && /Mac/.test(navigator.platform || navigator.userAgent)) {
   document.documentElement.dataset.vibrancy = "";
 }
 
+window.addEventListener("contextmenu", (event) => {
+  const el = event.target instanceof Element ? event.target : null;
+  if (!el?.closest("input, textarea, [contenteditable]")) event.preventDefault();
+});
+
 const target = document.getElementById("app");
 if (!target) throw new Error("#app missing");
 

@@ -170,21 +170,21 @@ button {
   background: rgba(255, 255, 255, 0.24);
 }
 
-/* Thin overlay scrollbars like macOS */
-::-webkit-scrollbar {
+/* macOS keeps its own overlay scrollbars; elsewhere draw thin ones. */
+:root:not([data-vibrancy]) ::-webkit-scrollbar {
   width: 11px;
   height: 11px;
 }
-::-webkit-scrollbar-thumb {
+:root:not([data-vibrancy]) ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.18);
   border: 3px solid transparent;
   border-radius: 8px;
   background-clip: content-box;
 }
-::-webkit-scrollbar-thumb:hover {
+:root:not([data-vibrancy]) ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
-::-webkit-scrollbar-track {
+:root:not([data-vibrancy]) ::-webkit-scrollbar-track {
   background: transparent;
 }
 

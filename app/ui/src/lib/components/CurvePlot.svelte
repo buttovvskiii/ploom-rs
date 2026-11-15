@@ -121,9 +121,6 @@
           <rect x="0" y="0" width={playhead ? playhead.x : width} {height} />
         </clipPath>
         {#if full}
-          <filter id="{uid}-glow" x="-10%" y="-30%" width="120%" height="160%">
-            <feGaussianBlur stdDeviation="5" />
-          </filter>
           <linearGradient
             id="{uid}-fill"
             x1="0"
@@ -207,7 +204,6 @@
               d={path}
               pathLength="1"
               style:stroke={tint}
-              filter="url(#{uid}-glow)"
               clip-path={playhead ? `url(#${uid}-past)` : undefined}
             />
           {/if}
@@ -292,8 +288,10 @@
   }
   .glow {
     fill: none;
-    stroke-width: 5;
-    opacity: 0.55;
+    stroke-width: 9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.14;
   }
   .area {
     opacity: 0.35;

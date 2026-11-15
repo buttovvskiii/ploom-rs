@@ -18,7 +18,7 @@
       {#if actions}<div class="actions">{@render actions()}</div>{/if}
     </div>
   </header>
-  <div class="scroll">
+  <div class="scroll" onscroll={() => window.dispatchEvent(new Event("ploom:scroll"))}>
     <div class="content">
       {@render children()}
     </div>
@@ -43,7 +43,7 @@
   .toolbar {
     flex: none;
     height: 52px;
-    padding-right: 11px;
+    padding-right: 0;
   }
   .bar {
     height: 100%;
@@ -96,5 +96,8 @@
     display: flex;
     flex-direction: column;
     gap: 26px;
+  }
+  :global(:root:not([data-vibrancy])) .toolbar {
+    padding-right: 11px;
   }
 </style>
