@@ -24,7 +24,7 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", default-features = false, features = ["env-filter", "fmt", "ansi"] }
 clap = { version = "4", features = ["derive"] }
 uuid = "1"
-btleplug = "0.11"
+btleplug = "0.13"
 async-trait = "0.1"
 dirs = "6"
 tempfile = "3"
