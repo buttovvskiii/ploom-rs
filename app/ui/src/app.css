@@ -1,0 +1,215 @@
+/* Design tokens. */
+:root {
+  color-scheme: dark;
+
+  /* Surfaces: near-black layers, cards lifted by tone and a hairline */
+  --window: #0f0f11;
+  --sidebar: #0b0b0c;
+  --group: #17171a;
+  --group-hover: #1d1d21;
+  --control: #26262a;
+  --control-hover: #2f2f34;
+  --sheet: #1b1b1e;
+  --field: rgba(255, 255, 255, 0.05);
+
+  /* Lines and fills */
+  --hairline: rgba(255, 255, 255, 0.065);
+  --hairline-strong: rgba(255, 255, 255, 0.11);
+  --fill: rgba(255, 255, 255, 0.06);
+  --fill-strong: rgba(255, 255, 255, 0.1);
+  --selection: rgba(255, 255, 255, 0.1);
+  /* The edge of a raised surface: a hairline all round and a faint top light. */
+  --surface-edge:
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  /* Labels */
+  --label: rgba(255, 255, 255, 0.92);
+  --label-2: rgba(255, 255, 255, 0.6);
+  --label-3: rgba(255, 255, 255, 0.32);
+  --label-4: rgba(255, 255, 255, 0.16);
+
+  /* Warm amber accent for "on" states (switches, sliders, gauges). */
+  --accent: #eaa53f;
+  --accent-strong: #e5e5ea;
+  --on-accent: #1c1c1e;
+  --focus: rgba(200, 200, 210, 0.55);
+
+  /* Status, used for small marks and short text only */
+  --green: #32d74b;
+  --orange: #ff9f0a;
+  --red: #ff453a;
+
+  /* Heating-mode tints, desaturated */
+  --tint-delicate: #c2b36f;
+  --tint-balanced: #d39a55;
+  --tint-intense: #cf5c62;
+  --tint-batterySaver: #6f98c8;
+
+  /* Type */
+  --font:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  --text-display: 600 26px/1.15 var(--font);
+  --text-title: 600 17px/1.3 var(--font);
+  --text-headline: 600 13px/1.38 var(--font);
+  --text-body: 400 13px/1.38 var(--font);
+  --text-callout: 400 12px/1.4 var(--font);
+  --text-footnote: 400 11px/1.36 var(--font);
+
+  /* Shape and space */
+  --radius-group: 16px;
+  --radius-control: 9px;
+  --gutter: 28px;
+  --row-x: 14px;
+
+  /* Motion: one family of curves and three durations, used everywhere. */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.32, 1.25, 0.6, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur: 260ms;
+  --dur-slow: 460ms;
+
+  --titlebar: 38px;
+  --sidebar-width: 216px;
+}
+
+/* In the desktop shell on macOS, let native window vibrancy show through. */
+:root[data-vibrancy] {
+  --sidebar: rgba(12, 12, 14, 0.62);
+  background: transparent;
+}
+:root[data-vibrancy] body {
+  background: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  background: var(--window);
+}
+
+body {
+  background: var(--window);
+  color: var(--label);
+  font: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+#app {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: default;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 1px;
+  border-radius: var(--radius-control);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.selectable {
+  -webkit-user-select: text;
+  user-select: text;
+  cursor: text;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* Thin overlay scrollbars like macOS */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border: 3px solid transparent;
+  border-radius: 8px;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Content entering after navigation */
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* A value that just changed: a brief lift, no layout change. */
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
