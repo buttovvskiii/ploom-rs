@@ -93,7 +93,7 @@ jobs:
           Copy-Item $setup.FullName dist/out/Ploom-windows-x64-setup.exe
           Compress-Archive -Path target/release/ploom.exe -DestinationPath dist/out/ploom-cli-windows-x64.zip
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ploom-${{ matrix.id }}
           path: dist/out/*
