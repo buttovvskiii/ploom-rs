@@ -1,0 +1,29 @@
+[package]
+name = "ploom-app"
+description = "Desktop controller for the Ploom Aura (GEN4L) over Bluetooth LE"
+version.workspace = true
+edition.workspace = true
+rust-version = "1.90"
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+publish = false
+
+[lib]
+# Distinct from the binary's name so `cargo doc` and Windows builds do not
+# collide on output file names.
+name = "ploom_app_lib"
+
+[build-dependencies]
+tauri-build = { workspace = true, features = [] }
+
+[dependencies]
+ploom-core = { workspace = true }
+serde = { workspace = true }
+tauri = { workspace = true, features = ["macos-private-api"] }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+[lints]
+workspace = true
