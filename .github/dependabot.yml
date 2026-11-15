@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: cargo
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      cargo:
+        patterns: ["*"]
+        update-types: [minor, patch]
+
+  - package-ecosystem: npm
+    directory: /app/ui
+    schedule:
+      interval: weekly
+    groups:
+      # The Tauri JS API and CLI must stay on the same minor version as the
+      # `tauri` crate; review these bumps together with Cargo.
+      tauri:
+        patterns: ["@tauri-apps/*"]
+      npm:
+        patterns: ["*"]
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

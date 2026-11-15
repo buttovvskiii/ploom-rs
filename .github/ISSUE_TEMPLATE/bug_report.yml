@@ -1,0 +1,53 @@
+name: Bug report
+description: Something does not work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please do not include identifiers of your device
+        (serial number, Bluetooth address, peripheral UUID).
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Desktop app
+        - CLI (ploom)
+        - Rust crates (ploom-protocol / ploom-core)
+        - Documentation
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: 0.1.0 or a commit hash
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: macOS 26.1 (Apple silicon), Ubuntu 24.04, …
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Device firmware and hardware
+      description: Shown on the Overview page or by `ploom status`.
+      placeholder: Firmware 8.0.3, hardware GEN4L-B
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Run with `RUST_LOG=ploom_core=debug` and paste the relevant part.
+      render: text
