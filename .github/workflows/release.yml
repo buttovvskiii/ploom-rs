@@ -46,7 +46,7 @@ jobs:
             libxdo-dev libssl-dev libayatana-appindicator3-dev \
             patchelf file libfuse2
 
-      - uses: dtolnay/rust-toolchain@1.98.1
+      - uses: dtolnay/rust-toolchain@1.120.0
         with:
           targets: ${{ matrix.id == 'macos' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
       - uses: Swatinem/rust-cache@v2
