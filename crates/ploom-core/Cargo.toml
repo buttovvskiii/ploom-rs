@@ -1,0 +1,38 @@
+[package]
+name = "ploom-core"
+description = "Bluetooth LE transport, device session and state for the Ploom Aura (GEN4L)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords = ["ploom", "bluetooth", "ble"]
+categories = ["hardware-support", "asynchronous"]
+
+[features]
+default = ["btleplug"]
+## Real Bluetooth LE transport via btleplug.
+btleplug = ["dep:btleplug"]
+## In-memory simulated device for tests.
+test-util = []
+
+[dependencies]
+ploom-protocol = { workspace = true, features = ["serde"] }
+async-trait = { workspace = true }
+btleplug = { workspace = true, optional = true }
+futures = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+uuid = { workspace = true }
+
+[dev-dependencies]
+ploom-core = { path = ".", features = ["test-util"] }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["test-util"] }
+
+[lints]
+workspace = true
