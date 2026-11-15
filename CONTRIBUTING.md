@@ -9,8 +9,8 @@ explains where things belong and the rules that are easy to get wrong.
 
 ## Setup
 
-- Rust stable (the toolchain is pinned to `stable` with rustfmt and clippy in
-  `rust-toolchain.toml`)
+- Rust (the exact version, with rustfmt and clippy, is pinned in
+  `rust-toolchain.toml`; rustup installs it on first use)
 - Node.js 22 and pnpm 10
 - Linux: `sudo apt install libdbus-1-dev pkg-config` plus the
   [Tauri prerequisites](https://v2.tauri.app/start/prerequisites/#linux)
