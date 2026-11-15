@@ -1,0 +1,19 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Node / UI
+node_modules/
+/app/ui/dist/
+/app/ui/.svelte-kit/
+*.tsbuildinfo
+
+# Tauri
+/app/src-tauri/target/
+/app/src-tauri/gen/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json

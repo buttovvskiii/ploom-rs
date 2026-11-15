@@ -1,0 +1,516 @@
+[
+ {
+  "name": "state change beats older idle status",
+  "frames": [
+   {
+    "hex": "10304314000000000000ff020801000100",
+    "tMs": 1000
+   },
+   {
+    "hex": "0431040000",
+    "tMs": 2000
+   }
+  ],
+  "nowMs": 3000,
+  "merged": {
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": true,
+   "is_preheating": false,
+   "lock": "locked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true,
+   "state": "smoking"
+  }
+ },
+ {
+  "name": "newer idle status beats older state change",
+  "frames": [
+   {
+    "hex": "0431040000",
+    "tMs": 1000
+   },
+   {
+    "hex": "10304314000000000000ff020801000100",
+    "tMs": 2000
+   }
+  ],
+  "nowMs": 3000,
+  "merged": {
+   "state": "smoking",
+   "is_in_use": false,
+   "is_preheating": false,
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "lock": "locked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true
+  }
+ },
+ {
+  "name": "preheating then smoking",
+  "frames": [
+   {
+    "hex": "10304314000000000000ff020801000100",
+    "tMs": 0
+   },
+   {
+    "hex": "0431020000",
+    "tMs": 500
+   },
+   {
+    "hex": "0431040000",
+    "tMs": 900
+   }
+  ],
+  "nowMs": 1000,
+  "merged": {
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": true,
+   "is_preheating": false,
+   "lock": "locked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true,
+   "state": "smoking"
+  }
+ },
+ {
+  "name": "standby clears charging",
+  "frames": [
+   {
+    "hex": "06340003000000",
+    "tMs": 0
+   },
+   {
+    "hex": "0431000000",
+    "tMs": 100
+   }
+  ],
+  "nowMs": 200,
+  "merged": {
+   "charge_mode": "mode3",
+   "is_charging": false,
+   "state": "standby",
+   "is_preheating": false,
+   "is_in_use": false
+  }
+ },
+ {
+  "name": "charging bit then charger removed",
+  "frames": [
+   {
+    "hex": "1030010000001001000000000001000100",
+    "tMs": 0
+   },
+   {
+    "hex": "06340007000000",
+    "tMs": 50
+   }
+  ],
+  "nowMs": 100,
+  "merged": {
+   "uptime_s": 1,
+   "is_temperature_error": false,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": "unlocked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true,
+   "is_charging": false,
+   "charge_mode": "noConnect"
+  }
+ },
+ {
+  "name": "charging bit cannot clear charging",
+  "frames": [
+   {
+    "hex": "06340003000000",
+    "tMs": 0
+   },
+   {
+    "hex": "10304314000000000000ff020801000100",
+    "tMs": 10
+   }
+  ],
+  "nowMs": 20,
+  "merged": {
+   "charge_mode": "mode3",
+   "is_charging": true,
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": "locked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true
+  }
+ },
+ {
+  "name": "window boundary is inclusive",
+  "frames": [
+   {
+    "hex": "023c50",
+    "tMs": 0
+   },
+   {
+    "hex": "02335f",
+    "tMs": 5000
+   }
+  ],
+  "nowMs": 15000,
+  "merged": {
+   "battery_pct": 80,
+   "battery_health_pct": 95
+  }
+ },
+ {
+  "name": "expired frames are dropped",
+  "frames": [
+   {
+    "hex": "023c50",
+    "tMs": 0
+   },
+   {
+    "hex": "02335f",
+    "tMs": 5000
+   }
+  ],
+  "nowMs": 15001,
+  "merged": {
+   "battery_health_pct": 95
+  }
+ },
+ {
+  "name": "full poll burst, downloaded intense",
+  "frames": [
+   {
+    "hex": "10304314000000000000ff020801000100",
+    "tMs": 0
+   },
+   {
+    "hex": "02335f",
+    "tMs": 10
+   },
+   {
+    "hex": "0c9f0000000000000000000000",
+    "tMs": 20
+   },
+   {
+    "hex": "033c5500",
+    "tMs": 30
+   },
+   {
+    "hex": "02fcc4",
+    "tMs": 40
+   },
+   {
+    "hex": "023d01",
+    "tMs": 50
+   },
+   {
+    "hex": "083e00020000000000",
+    "tMs": 60
+   }
+  ],
+  "nowMs": 100,
+  "merged": {
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": "locked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true,
+   "battery_health_pct": 95,
+   "battery_pct": 85,
+   "rssi_dbm": -60,
+   "profile_downloaded_active": true,
+   "heating_mode_downloaded": "INTENSE",
+   "heating_mode": "INTENSE"
+  }
+ },
+ {
+  "name": "factory profile active",
+  "frames": [
+   {
+    "hex": "023d00",
+    "tMs": 0
+   },
+   {
+    "hex": "083e00020000000000",
+    "tMs": 10
+   }
+  ],
+  "nowMs": 20,
+  "merged": {
+   "profile_downloaded_active": false,
+   "heating_mode_downloaded": "INTENSE",
+   "heating_mode": "BALANCED"
+  }
+ },
+ {
+  "name": "profile source fallback",
+  "frames": [
+   {
+    "hex": "10304314000000000000ff020801000000",
+    "tMs": 0
+   }
+  ],
+  "nowMs": 10,
+  "merged": {
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": "locked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "factory",
+   "last_cigarette_allowed": true,
+   "heating_mode": "BALANCED"
+  }
+ },
+ {
+  "name": "downloaded but unknown which",
+  "frames": [
+   {
+    "hex": "10304314000000000000ff020801000100",
+    "tMs": 0
+   }
+  ],
+  "nowMs": 10,
+  "merged": {
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": "locked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true
+  }
+ },
+ {
+  "name": "multi-bit state",
+  "frames": [
+   {
+    "hex": "10304314000000000000ff020801000100",
+    "tMs": 0
+   },
+   {
+    "hex": "0431060000",
+    "tMs": 10
+   }
+  ],
+  "nowMs": 20,
+  "merged": {
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": true,
+   "is_preheating": false,
+   "lock": "locked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true,
+   "state": "smoking"
+  }
+ },
+ {
+  "name": "temperature error",
+  "frames": [
+   {
+    "hex": "10304314000000000000ff020801000100",
+    "tMs": 0
+   },
+   {
+    "hex": "0431100000",
+    "tMs": 10
+   }
+  ],
+  "nowMs": 20,
+  "merged": {
+   "uptime_s": 5187,
+   "is_temperature_error": true,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": "locked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true,
+   "state": "temperatureError"
+  }
+ },
+ {
+  "name": "lock notification after status",
+  "frames": [
+   {
+    "hex": "10304314000000000000ff020801000100",
+    "tMs": 0
+   },
+   {
+    "hex": "029f01",
+    "tMs": 10
+   }
+  ],
+  "nowMs": 20,
+  "merged": {
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": "unlocked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true
+  }
+ },
+ {
+  "name": "configuration frame",
+  "frames": [
+   {
+    "hex": "0c180811030000000001010000",
+    "tMs": 0
+   }
+  ],
+  "nowMs": 10,
+  "merged": {
+   "is_temperature_error": true,
+   "lock": "feature_off",
+   "shake": "shakeOrTapOn",
+   "auto_start_heating": true,
+   "end_by_puff": true,
+   "profile_source": "factory",
+   "last_cigarette_allowed": true,
+   "heating_mode": "BALANCED"
+  }
+ },
+ {
+  "name": "smoking status then standby change",
+  "frames": [
+   {
+    "hex": "1030431400002001000000000001000100",
+    "tMs": 0
+   },
+   {
+    "hex": "0431000000",
+    "tMs": 10
+   }
+  ],
+  "nowMs": 20,
+  "merged": {
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": "unlocked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true,
+   "state": "standby",
+   "is_charging": false
+  }
+ },
+ {
+  "name": "vibration and logs",
+  "frames": [
+   {
+    "hex": "027a00",
+    "tMs": 0
+   },
+   {
+    "hex": "053506000700",
+    "tMs": 10
+   },
+   {
+    "hex": "027a01",
+    "tMs": 20
+   }
+  ],
+  "nowMs": 30,
+  "merged": {
+   "is_vibrating": false,
+   "unacquired_logs": [
+    6,
+    7
+   ]
+  }
+ },
+ {
+  "name": "unknown state keeps flags",
+  "frames": [
+   {
+    "hex": "1030431400002001000000000001000100",
+    "tMs": 0
+   },
+   {
+    "hex": "0431800000",
+    "tMs": 10
+   }
+  ],
+  "nowMs": 20,
+  "merged": {
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": true,
+   "is_preheating": false,
+   "lock": "unlocked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true,
+   "state": "unknown:0x80"
+  }
+ },
+ {
+  "name": "out of order arrival",
+  "frames": [
+   {
+    "hex": "023c40",
+    "tMs": 0
+   },
+   {
+    "hex": "023c41",
+    "tMs": 2000
+   },
+   {
+    "hex": "023c42",
+    "tMs": 1000
+   }
+  ],
+  "nowMs": 2000,
+  "merged": {
+   "battery_pct": 66
+  }
+ }
+]

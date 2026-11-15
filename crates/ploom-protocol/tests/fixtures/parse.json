@@ -1,0 +1,571 @@
+[
+ {
+  "hex": "10304314000000000000ff020801000100",
+  "decoded": {
+   "uptime_s": 5187,
+   "is_temperature_error": false,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": "locked",
+   "shake": "off",
+   "auto_start_heating": true,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true
+  }
+ },
+ {
+  "hex": "1030000000006001000000ff0000000100",
+  "decoded": {
+   "uptime_s": 0,
+   "is_temperature_error": false,
+   "is_in_use": true,
+   "is_preheating": true,
+   "lock": "unlocked",
+   "shake": "off",
+   "auto_start_heating": false,
+   "end_by_puff": false,
+   "profile_source": "downloaded",
+   "last_cigarette_allowed": true
+  }
+ },
+ {
+  "hex": "1030010000001011020000000000000200",
+  "decoded": {
+   "uptime_s": 1,
+   "is_temperature_error": false,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": "feature_off",
+   "shake": "tapOn",
+   "auto_start_heating": false,
+   "end_by_puff": false,
+   "profile_source": "p2p",
+   "last_cigarette_allowed": true,
+   "is_charging": true
+  }
+ },
+ {
+  "hex": "1030010000000805070000000000010701",
+  "decoded": {
+   "uptime_s": 1,
+   "is_temperature_error": true,
+   "is_in_use": false,
+   "is_preheating": false,
+   "lock": 5,
+   "shake": 7,
+   "auto_start_heating": false,
+   "end_by_puff": true,
+   "profile_source": 7,
+   "last_cigarette_allowed": false
+  }
+ },
+ {
+  "hex": "0f300100000000000000000000000000",
+  "decoded": {}
+ },
+ {
+  "hex": "0c180801030000000001010000",
+  "decoded": {
+   "is_temperature_error": true,
+   "lock": "unlocked",
+   "shake": "shakeOrTapOn",
+   "auto_start_heating": true,
+   "end_by_puff": true,
+   "profile_source": "factory",
+   "last_cigarette_allowed": true
+  }
+ },
+ {
+  "hex": "0c180011040000000000000201",
+  "decoded": {
+   "is_temperature_error": false,
+   "lock": "feature_off",
+   "shake": "disabled",
+   "auto_start_heating": false,
+   "end_by_puff": false,
+   "profile_source": "p2p",
+   "last_cigarette_allowed": false
+  }
+ },
+ {
+  "hex": "0b1800110400000000000002",
+  "decoded": {}
+ },
+ {
+  "hex": "0431010000",
+  "decoded": {
+   "state": "automaticHeating"
+  }
+ },
+ {
+  "hex": "0431000001",
+  "decoded": {
+   "state": "standby"
+  }
+ },
+ {
+  "hex": "0431020000",
+  "decoded": {
+   "state": "preheating"
+  }
+ },
+ {
+  "hex": "0431040000",
+  "decoded": {
+   "state": "smoking"
+  }
+ },
+ {
+  "hex": "0431080000",
+  "decoded": {
+   "state": "charging"
+  }
+ },
+ {
+  "hex": "0431100000",
+  "decoded": {
+   "state": "temperatureError"
+  }
+ },
+ {
+  "hex": "0431200000",
+  "decoded": {
+   "state": "alarmError"
+  }
+ },
+ {
+  "hex": "0431400000",
+  "decoded": {
+   "state": "standby"
+  }
+ },
+ {
+  "hex": "0431060000",
+  "decoded": {
+   "state": "smoking"
+  }
+ },
+ {
+  "hex": "0431030000",
+  "decoded": {
+   "state": "preheating"
+  }
+ },
+ {
+  "hex": "0431800000",
+  "decoded": {
+   "state": "unknown:0x80"
+  }
+ },
+ {
+  "hex": "0431810000",
+  "decoded": {
+   "state": "unknown:0x81"
+  }
+ },
+ {
+  "hex": "0431ff0000",
+  "decoded": {
+   "state": "unknown:0xff"
+  }
+ },
+ {
+  "hex": "0131",
+  "decoded": {}
+ },
+ {
+  "hex": "02335f",
+  "decoded": {
+   "battery_health_pct": 95
+  }
+ },
+ {
+  "hex": "0133",
+  "decoded": {}
+ },
+ {
+  "hex": "06340003000000",
+  "decoded": {
+   "charge_mode": "mode3",
+   "is_charging": true
+  }
+ },
+ {
+  "hex": "06340007000000",
+  "decoded": {
+   "charge_mode": "noConnect",
+   "is_charging": false
+  }
+ },
+ {
+  "hex": "06340006000000",
+  "decoded": {
+   "charge_mode": "other",
+   "is_charging": true
+  }
+ },
+ {
+  "hex": "06340009000000",
+  "decoded": {
+   "charge_mode": 9,
+   "is_charging": true
+  }
+ },
+ {
+  "hex": "023400",
+  "decoded": {}
+ },
+ {
+  "hex": "053506000700",
+  "decoded": {
+   "unacquired_logs": [
+    6,
+    7
+   ]
+  }
+ },
+ {
+  "hex": "0435060007",
+  "decoded": {}
+ },
+ {
+  "hex": "1336b033000068010000000100010e00000000b095",
+  "decoded": {
+   "smoking_start": 13232,
+   "session_time": 360,
+   "total_times_smoked": 0,
+   "puff_stop_enabled": false,
+   "heating_start_condition": 0,
+   "is_auto_on_enabled": true,
+   "is_lock_function_enabled": false,
+   "unlock_method": 1,
+   "downloaded_profile": 14,
+   "total_time": 45056
+  }
+ },
+ {
+  "hex": "1236b033000068010000000100010e00000000b0",
+  "decoded": {
+   "smoking_start": 13232,
+   "session_time": 360,
+   "total_times_smoked": 0,
+   "puff_stop_enabled": false,
+   "heating_start_condition": 0,
+   "is_auto_on_enabled": true,
+   "is_lock_function_enabled": false,
+   "unlock_method": 1,
+   "downloaded_profile": 14,
+   "total_time": 45056
+  }
+ },
+ {
+  "hex": "13370e005d009000d000e6000901240157010000",
+  "decoded": {
+   "puffs": {
+    "1": 14,
+    "2": 93,
+    "3": 144,
+    "4": 208,
+    "5": 230,
+    "6": 265,
+    "7": 292,
+    "8": 343
+   }
+  }
+ },
+ {
+  "hex": "1338000000000000000000000000000000000000",
+  "decoded": {
+   "puffs": {}
+  }
+ },
+ {
+  "hex": "1338010002000000040000000000000000000900",
+  "decoded": {
+   "puffs": {
+    "10": 1,
+    "11": 2,
+    "13": 4,
+    "18": 9
+   }
+  }
+ },
+ {
+  "hex": "0f391000110000000000000000000000",
+  "decoded": {
+   "puffs": {
+    "19": 16,
+    "20": 17
+   }
+  }
+ },
+ {
+  "hex": "023705",
+  "decoded": {
+   "puffs": {}
+  }
+ },
+ {
+  "hex": "0137",
+  "decoded": {
+   "puffs": {}
+  }
+ },
+ {
+  "hex": "133a1b01ad02a401620d9c0b0000000000000000",
+  "decoded": {
+   "energy_50ms": 283,
+   "stpe0_segment_energy": 685,
+   "mv_avg0_at_start": 420,
+   "mv_avg2_at_start": 3426,
+   "energy_200ms": 2972
+  }
+ },
+ {
+  "hex": "0a3a1b01ad02a401620d9c",
+  "decoded": {}
+ },
+ {
+  "hex": "133b030000002f010000fd0d960ed00be60b0000",
+  "decoded": {
+   "charge_start": 3,
+   "charge_end": 303,
+   "mv_start": 3581,
+   "mv_end": 3734,
+   "temp_start": 3024,
+   "temp_end": 3046
+  }
+ },
+ {
+  "hex": "113b030000002f010000fd0d960ed00be60b",
+  "decoded": {
+   "charge_start": 3,
+   "charge_end": 303,
+   "mv_start": 3581,
+   "mv_end": 3734,
+   "temp_start": 3024,
+   "temp_end": 3046
+  }
+ },
+ {
+  "hex": "103b030000002f010000fd0d960ed00be6",
+  "decoded": {}
+ },
+ {
+  "hex": "033c5500",
+  "decoded": {
+   "battery_pct": 85
+  }
+ },
+ {
+  "hex": "023c64",
+  "decoded": {
+   "battery_pct": 100
+  }
+ },
+ {
+  "hex": "013c",
+  "decoded": {}
+ },
+ {
+  "hex": "023d01",
+  "decoded": {
+   "profile_downloaded_active": true
+  }
+ },
+ {
+  "hex": "023d00",
+  "decoded": {
+   "profile_downloaded_active": false
+  }
+ },
+ {
+  "hex": "023d02",
+  "decoded": {
+   "profile_downloaded_active": true
+  }
+ },
+ {
+  "hex": "013d",
+  "decoded": {}
+ },
+ {
+  "hex": "083e00010000000000",
+  "decoded": {
+   "heating_mode_downloaded": "DELICATE"
+  }
+ },
+ {
+  "hex": "083e00020000000000",
+  "decoded": {
+   "heating_mode_downloaded": "INTENSE"
+  }
+ },
+ {
+  "hex": "083e00030000000000",
+  "decoded": {
+   "heating_mode_downloaded": "BATTERY_SAVER"
+  }
+ },
+ {
+  "hex": "053e000e0000",
+  "decoded": {
+   "heating_mode_downloaded": "BALANCED"
+  }
+ },
+ {
+  "hex": "023e00",
+  "decoded": {}
+ },
+ {
+  "hex": "0f400200010000005f00000000000000",
+  "decoded": {
+   "total_charge_count": 2,
+   "charge_mode_raw": 1,
+   "soh": 95
+  }
+ },
+ {
+  "hex": "0f400001000001006400000000000000",
+  "decoded": {
+   "total_charge_count": 256,
+   "charge_mode_raw": 65536,
+   "soh": 100
+  }
+ },
+ {
+  "hex": "0740020001000000",
+  "decoded": {}
+ },
+ {
+  "hex": "0a50010203040506070809",
+  "decoded": {
+   "error_log": "01 02 03 04 05 06 07 08 09"
+  }
+ },
+ {
+  "hex": "0150",
+  "decoded": {
+   "error_log": ""
+  }
+ },
+ {
+  "hex": "0af4aabbccddeeff001122",
+  "decoded": {
+   "error_log": "aa bb cc dd ee ff 00 11 22"
+  }
+ },
+ {
+  "hex": "027a00",
+  "decoded": {
+   "is_vibrating": true
+  }
+ },
+ {
+  "hex": "027a01",
+  "decoded": {
+   "is_vibrating": false
+  }
+ },
+ {
+  "hex": "017a",
+  "decoded": {}
+ },
+ {
+  "hex": "0c9f0000000000000000000000",
+  "decoded": {
+   "lock": "locked"
+  }
+ },
+ {
+  "hex": "0c9f0100000000000000000000",
+  "decoded": {
+   "lock": "unlocked"
+  }
+ },
+ {
+  "hex": "029f11",
+  "decoded": {
+   "lock": "feature_off"
+  }
+ },
+ {
+  "hex": "029f05",
+  "decoded": {
+   "lock": 5
+  }
+ },
+ {
+  "hex": "02fcc4",
+  "decoded": {
+   "rssi_dbm": -60
+  }
+ },
+ {
+  "hex": "02fc00",
+  "decoded": {
+   "rssi_dbm": 0
+  }
+ },
+ {
+  "hex": "02fc7f",
+  "decoded": {
+   "rssi_dbm": 127
+  }
+ },
+ {
+  "hex": "02fc80",
+  "decoded": {
+   "rssi_dbm": -128
+  }
+ },
+ {
+  "hex": "023f00",
+  "decoded": {}
+ },
+ {
+  "hex": "023f01",
+  "decoded": {}
+ },
+ {
+  "hex": "024900",
+  "decoded": {}
+ },
+ {
+  "hex": "024b02",
+  "decoded": {}
+ },
+ {
+  "hex": "0d44010002000300040005000600",
+  "decoded": {}
+ },
+ {
+  "hex": "0d450700b00409000a000b000c00",
+  "decoded": {}
+ },
+ {
+  "hex": "09460d000e000f001000",
+  "decoded": {}
+ },
+ {
+  "hex": "0af209001c0c0000000000",
+  "decoded": {}
+ },
+ {
+  "hex": "11f207000100c8011c00000000000000",
+  "decoded": {}
+ },
+ {
+  "hex": "02e300",
+  "decoded": {}
+ },
+ {
+  "hex": "029900",
+  "decoded": {}
+ },
+ {
+  "hex": "05fe01020304",
+  "decoded": {}
+ }
+]
