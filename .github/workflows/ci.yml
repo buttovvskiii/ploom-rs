@@ -26,7 +26,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       # btleplug needs D-Bus; the workspace also contains the Tauri shell,
       # which links against WebKitGTK on Linux.
@@ -62,7 +62,7 @@ jobs:
       run:
         working-directory: app/ui
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v4
         with:
           version: 10
@@ -84,7 +84,7 @@ jobs:
       run:
         working-directory: app/ui
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@1.98.1
       - uses: Swatinem/rust-cache@v2
         with:
